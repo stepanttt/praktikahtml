@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Блог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Название блога</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Заголовок статьи</h2>
+            <p>Текст статьи...</p>
+            <footer>
+                <p>Автор: Имя Автора</p>
+                <time datetime="2023-12-15">Дата публикации: 15 декабря 2023</time>
+            </footer>
+        </article>
+
+        <aside>
+            <section>
+                <h3>Популярные статьи</h3>
+                <ul>
+                    <li><a href="/popular-article-1">Популярная статья 1</a></li>
+                    <li><a href="/popular-article-2">Популярная статья 2</a></li>
+                    <li><a href="/popular-article-3">Популярная статья 3</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Реклама</h3>
+                <img src="advertisement.jpg" alt="Рекламный баннер">
+            </section>
+
+            <!-- Добавлены интерактивные элементы -->
+            <section>
+                <h3>Интерактивные элементы</h3>
+                <button onclick="alert('Привет!')">Нажми меня</button>
+                <input type="text" placeholder="Введите текст">
+                <select>
+                    <option value="value1">Опция 1</option>
+                    <option value="value2">Опция 2</option>
+                    <option value="value3">Опция 3</option>
+                </select>
+            </section>
+        </aside>
+
+        <aside>
+            <section>
+                <h3>Интерактивные элементы</h3>
+                <!-- Кнопка подписки на рассылку -->
+                <form>
+                    <input type="email" placeholder="Введите ваш email">
+                    <button type="submit">Подписаться</button>
+                </form>
+        
+                <!-- Форма обратной связи -->
+                <form>
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="email" placeholder="Ваш email">
+                    <textarea placeholder="Ваше сообщение"></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+        
+                <!-- Селектор тем для блога -->
+                <label for="theme">Выберите тему блога:</label>
+                <select id="theme">
+                    <option value="theme1">Тема 1</option>
+                    <option value="theme2">Тема 2</option>
+                    <option value="theme3">Тема 3</option>
+                </select>
+            </section>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Название блога. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

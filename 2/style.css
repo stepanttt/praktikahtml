@@ -1,0 +1,103 @@
+/* Стили для основного контейнера */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Стили для заголовка блога */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Стили для навигации */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Стили для основной части блога */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Стили для статьи */
+article {
+    background-color: #fff;
+    width: 70%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h2 {
+    color: #333;
+}
+
+article p {
+    line-height: 1.6;
+}
+
+article footer {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* Стили для боковой панели */
+aside {
+    background-color: #f4f4f4;
+    width: 25%;
+    padding: 20px;
+}
+
+/* Стили для блоков в боковой панели */
+aside section {
+    margin-bottom: 20px;
+}
+
+aside h3 {
+    color: #333;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #555;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
