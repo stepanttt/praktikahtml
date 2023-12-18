@@ -1,25 +1,23 @@
-/* Стили для основного контейнера */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+h1 {
+    font-size: 28px;
     color: #333;
+    position: relative; /* Необходимо для абсолютного позиционирования псевдоэлемента */
+    padding-left: 40px; 
 }
 
-/* Стили для заголовка блога */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+h1::before {
+    content: '🌟'; /* Пример использования псевдоэлемента */
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    font-size: 32px;
+    color: gold;
 }
 
-/* Стили для навигации */
+/*  псевдокласс hover */
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav ul li {
@@ -29,23 +27,34 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #666;
+    font-weight: bold;
+    position: relative; 
 }
 
-/* Стили для основной части блога */
-main {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+nav ul li a:hover {
+    color: #000;
 }
 
-/* Стили для статьи */
+nav ul li a::after {
+    content: ' ►'; 
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+nav ul li a:hover::after {
+    opacity: 1; 
+}
+
+
 article {
-    background-color: #fff;
-    width: 70%;
-    padding: 20px;
     margin-bottom: 20px;
 }
+
 
 article h2 {
     color: #333;
@@ -61,14 +70,14 @@ article footer {
     color: #888;
 }
 
-/* Стили для боковой панели */
+
 aside {
     background-color: #f4f4f4;
     width: 25%;
     padding: 20px;
 }
 
-/* Стили для блоков в боковой панели */
+
 aside section {
     margin-bottom: 20px;
 }
