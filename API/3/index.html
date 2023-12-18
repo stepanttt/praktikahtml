@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Локальное файловое хранилище</title>
+  <style>
+    .file-item {
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="fileInput" multiple>
+  <div id="fileList"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fileInput = document.getElementById('fileInput');
+      const fileList = document.getElementById('fileList');
+
+      fileInput.addEventListener('change', handleFileSelect);
+      
+      function handleFileSelect(event) {
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          const fileItem = document.createElement('div');
+          fileItem.classList.add('file-item');
+          fileItem.innerHTML = `
+            <strong>Name:</strong> ${file.name}<br>
+            <strong>Type:</strong> ${file.type || 'n/a'}<br>
+            <strong>Size:</strong> ${file.size} bytes
+          `;
+          fileList.appendChild(fileItem);
+          saveFileToLocalStorage(file); 
+        }
+      }
+
+      function saveFileToLocalStorage(file) {
+        const fileKey = `file_${Date.now()}_${file.name}`;
+        localStorage.setItem(fileKey, JSON.stringify(file));
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>HTML5 API. Контрольная точка: квадратики</title>
+ <meta charset="utf-8" />
+ <style>
+      div {
+     position: absolute;
+     padding: 0;
+     margin: 0;
+   }
+   
+   div#element-red,
+   div#element-gray,
+   div#element-yellow {
+     width: 50px;
+     height: 50px;
+     top: 50px;
+   }
+   
+   div#element-red {
+     background-color: red;
+     left: 30px;
+   }
+   
+   div#element-gray {
+     background-color: gray;
+     left: 100px;
+   }
+   
+   div#element-yellow {
+     background-color: yellow;
+     left: 170px;
+   }
+   
+   div#area-red,
+   div#area-gray,
+   div#area-yellow {
+     width: 50px;
+     height: 50px;
+     top: 120px;
+   }
+   
+   div#area-yellow {
+     border: 3px solid yellow;
+     left: 10px;
+   }
+   
+   div#area-red {
+     border: 3px solid red;
+     left: 100px;
+   }
+   
+   div#area-gray {
+     border: 3px solid gray;
+     left: 190px;
+   }
+ </style>
+ </head>
+ <body>
+  <div id="element-red" draggable="true" ondragstart="drag(event)" style="cursor:move;"></div>
+  <div id="element-gray" draggable="true" ondragstart="drag(event)" style="cursor:move;"></div>
+  <div id="element-yellow" draggable="true" ondragstart="drag(event)" style="cursor:move;"></div>
+  <div id="area-red" ondrop="drop(event, 'red')" ondragover="allowDrop(event)"></div>
+  <div id="area-gray" ondrop="drop(event, 'gray')" ondragover="allowDrop(event)"></div>
+  <div id="area-yellow" ondrop="drop(event, 'yellow')" ondragover="allowDrop(event)"></div>
+ 
+  <script>
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+ 
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+ 
+    function drop(ev, color) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      var draggedElement = document.getElementById(data);
+ 
+      // Получаем цвет рамки для соответствующей области
+      var borderColor = window.getComputedStyle(ev.target).borderColor;
+ 
+      // Проверяем, соответствует ли цвет рамки цвету перетаскиваемого элемента
+      if (borderColor === color) {
+        ev.target.style.backgroundColor = color; // Закрашиваем область в цвет элемента
+        ev.target.appendChild(draggedElement); // Помещаем элемент в соответствующую область
+      }
+    }
+  </script>
+ </body>
+ </html>
